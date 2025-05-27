@@ -11,7 +11,6 @@ from app.routers import planning_auto
 from fastapi.middleware.cors import CORSMiddleware
 from app.scheduler import start_scheduler
 from app.routers import notification
-from app.routers import health_check
 from app.routers import ws
 import os
 
@@ -43,7 +42,6 @@ app.include_router(tache_planifiee.router)
 app.include_router(utilisateur_routes.router)
 app.include_router(planning_auto.router)
 app.include_router(notification.router)
-app.include_router(health_check.router)
 app.include_router(ws.router)
 
 
