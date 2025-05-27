@@ -20,6 +20,10 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+@app.get("/health")
+def health_check():
+    return {"status": "OK"}
+
 @app.on_event("startup")
 async def startup_event():
     print("Démarrage du scheduler...")
