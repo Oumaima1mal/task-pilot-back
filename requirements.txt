@@ -19,4 +19,5 @@ databases
 passlib[bcrypt]
 psycopg2-binary==2.9.9
 email-validator
+python-jose[cryptography]
 
