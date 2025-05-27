@@ -15,14 +15,10 @@ from app.routers import health_check
 from app.routers import ws
 import os
 
-
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-@app.get("/health")
-def health_check():
-    return {"status": "OK"}
 
 @app.on_event("startup")
 async def startup_event():
