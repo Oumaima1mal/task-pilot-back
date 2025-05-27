@@ -13,6 +13,7 @@ from app.scheduler import start_scheduler
 from app.routers import notification
 from app.routers import health_check
 from app.routers import ws
+import os
 
 
 Base.metadata.create_all(bind=engine)
@@ -45,3 +46,9 @@ app.include_router(notification.router)
 app.include_router(health_check.router)
 app.include_router(ws.router)
 
+
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Utilise le port de Railway ou 8000 par défaut
+    uvicorn.run(app, host="0.0.0.0", port=port)
