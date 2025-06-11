@@ -32,7 +32,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+@app.get("/health-check")
+async def health_check():
+    return {"status": "ok"} 
+    
 app.include_router(auth.router)
 app.include_router(tache.router)
 app.include_router(groupe.router)
