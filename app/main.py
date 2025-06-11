@@ -27,7 +27,7 @@ async def startup_event():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://task-pilot-pi.vercel.app/"],
+    allow_origins=["https://task-pilot-pi.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
